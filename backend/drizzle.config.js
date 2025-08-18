@@ -1,10 +1,18 @@
+import { config } from "dotenv";
 import { defineConfig } from "drizzle-kit";
 
+config(); // load .env
+
 export default defineConfig({
-  schema: "./src/db/schema.js", // path to schema file
-  out: "./drizzle",             // where migration files will be generated
-  dialect: "postgresql",
+  schema: "./src/db/schema/*", // adjust path
+  out: "./drizzle",
+  dialect: "postgresql",       // ✅ instead of driver
   dbCredentials: {
-    url: process.env.DATABASE_URL,
+    host: process.env.PGHOST,
+    port: parseInt(process.env.PGPORT ?? "5432"),
+    user: process.env.PGUSER,
+    password: process.env.PGPASSWORD,
+    database: process.env.PGDATABASE,
+    ssl: false,
   },
 });
