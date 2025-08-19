@@ -9,9 +9,9 @@ function Departments() {
   const [editId, setEditId] = useState(null);
 
   const fetchData = async () => {
-    const plantsRes = await API.get("/plants");
+    const plantsRes = await API.get("/api/plants");
     setPlants(plantsRes.data);
-    const deptRes = await API.get("/departments");
+    const deptRes   = await API.get("/api/departments");
     setDepartments(deptRes.data);
   };
 

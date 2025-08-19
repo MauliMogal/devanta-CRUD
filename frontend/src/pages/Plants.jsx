@@ -8,7 +8,7 @@ function Plants() {
 
   const fetchPlants = async () => {
     try {
-      const res = await API.get("/plants");
+      const res = await API.get("/api/plants");
       setPlants(res.data);
     } catch (err) {
       console.error(err);
