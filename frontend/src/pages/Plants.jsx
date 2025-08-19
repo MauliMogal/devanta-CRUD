@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import API from "../../../frontend/src/API/api"; // your axios instance
+import Header from "../components/Header";
+
 
 function Plants() {
   const [plants, setPlants] = useState([]);
@@ -42,6 +44,8 @@ function Plants() {
   };
 
   return (
+    <>
+    <Header/>
     <div className="container">
       <h2>Plants</h2>
       <input type="text" placeholder="Plant Name" value={name} onChange={e => setName(e.target.value)} />
@@ -67,6 +71,7 @@ function Plants() {
         </tbody>
       </table>
     </div>
+    </>
   );
 }
 

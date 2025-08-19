@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Header from "../components/Header";
+
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -13,6 +15,8 @@ function Login() {
   };
 
   return (
+    <>
+      <Header/>
     <div className="container">
       <h2>Login</h2>
       <form onSubmit={handleLogin}>
@@ -23,6 +27,7 @@ function Login() {
         <button type="submit" className="add">Login</button>
       </form>
     </div>
+    </>
   );
 }
 

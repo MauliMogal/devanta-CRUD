@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import API from "../../../frontend/src/API/api";
+import Header from "../components/Header";
 
 function Departments() {
   const [departments, setDepartments] = useState([]);
@@ -44,6 +45,8 @@ function Departments() {
   };
 
   return (
+    <>
+      <Header/>
     <div className="container">
       <h2>Departments</h2>
       <input type="text" placeholder="Department Name" value={name} onChange={e => setName(e.target.value)} />
@@ -75,6 +78,7 @@ function Departments() {
         </tbody>
       </table>
     </div>
+    </>
   );
 }
 
