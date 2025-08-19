@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "backend",
   "version": "1.0.0",
   "description": "Backend for Plant & Department CRUD web app using Express, PostgreSQL, and Drizzle ORM",
